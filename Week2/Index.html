@@ -8,16 +8,17 @@
 
 <body>
 
-	<h1 id="mr-javascript">I am replacher Line</h1>
-	<a href="#" id="anchor">Click Here To fit your name!!!!</a>
+	<h1 id="new">I am replacher Line</h1>
+	<a href="#" class="nc">Click Here To fit your name!!!!</a>
+	<a href="#" class="nc">Csdfsf dfsdfsdf!</a>
 
 	<script>
 
-	var anchor = document.getElementById('anchor');
-	anchor.addEventListener('click',function(){
+	var anchor = document.getElementsByClassName("nc");
+	anchor[1].addEventListener('click',function(){
 
 		
-		var name = document.getElementById('mr-javascript');
+		var name = document.getElementById('new');
 		//console.log(name);
 		name.innerHTML = prompt("Type your name");
 
