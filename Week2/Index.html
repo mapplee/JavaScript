@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	<meta charset="utf-8">
+	<title>JavaScript</title>
+	</head>
+
+<body>
+
+	<h1 id="mr-javascript">I am replacher Line</h1>
+	<a href="#" id="anchor">Click Here To fit your name!!!!</a>
+
+	<script>
+
+	var anchor = document.getElementById('anchor');
+	anchor.addEventListener('click',function(){
+
+		
+		var name = document.getElementById('mr-javascript');
+		//console.log(name);
+		name.innerHTML = prompt("Type your name");
+
+		});
+
+	</script>
+
+</body>
+</html>
