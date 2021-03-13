@@ -25,7 +25,7 @@ ajaxCall.send()
 //console.log(ajaxCall);
 ajaxCall.addEventListener('load',function(e){
 	var data=e.target.response;
-	console.log(e);
+	//console.log(e);
 	show(data);
 
 });
@@ -35,9 +35,11 @@ ajaxCall.addEventListener('load',function(e){
 
 
 //Show 
-function show(input){
+function show(data){
+	var raw=JSON.parse(data);
+	console.log(raw);
 var sh=document.querySelector(".dis");
-sh.innerHTML=input;
+sh.innerHTML=raw.data[0].images.fixed_height.url;
 }
 
 //
