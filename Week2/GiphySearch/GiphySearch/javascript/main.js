@@ -2,7 +2,7 @@
 document.querySelector(".apple").addEventListener('click',function(){
 	var input=document.querySelector(".js-userinput").value;
 	//console.log(input);
-	show(input);
+	pushToApi(input);
 });
 
 
@@ -12,16 +12,29 @@ document.querySelector(".js-userinput").addEventListener('keyup',function(e){
 	if(e.which===13){
 	//console.log(input);
 	//var sh=document.querySelector(".dis");
-	show(input);
+	pushToApi(input);
 	}
 });
 
 //Api 
 //ajax request
-var url="http://api.giphy.com/v1/gifs/search?api_key=VuMSAatfDGEFi1NpnLRMgCCSgoqBIabg&q=dog"
+function pushToApi(input){
+	
+	var search=input;
+	/*for(i=0;i<search.length;i++)
+	{
+		if(search[i]===' ')
+			search[i].replace(' ','+');
+		console.log(search[i]);
+	}*/
+	search=search.replace(' ','+');
+	console.log(search);
+
+var url="http://api.giphy.com/v1/gifs/search?api_key=VuMSAatfDGEFi1NpnLRMgCCSgoqBIabg&q="+search;
+console.log(url);
 var ajaxCall=new XMLHttpRequest();
 ajaxCall.open('GET',url);
-ajaxCall.send()
+ajaxCall.send();
 //console.log(ajaxCall);
 ajaxCall.addEventListener('load',function(e){
 	var data=e.target.response;
@@ -29,6 +42,7 @@ ajaxCall.addEventListener('load',function(e){
 	show(data);
 
 });
+}
 
 
 
@@ -39,7 +53,8 @@ function show(data){
 	var raw=JSON.parse(data);
 	console.log(raw);
 var sh=document.querySelector(".dis");
-sh.innerHTML=raw.data[0].images.fixed_height.url;
+var link=raw.data[0].images.fixed_height.url;
+sh.innerHTML='<img src="'+link+'">';
 }
 
 //
