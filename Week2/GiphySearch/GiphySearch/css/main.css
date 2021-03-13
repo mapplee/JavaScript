@@ -35,3 +35,7 @@ body {
 	float: left;
 	margin-right:3%;
 }
+.container-html{
+	align-items: center;
+	text-align: center;
+}
