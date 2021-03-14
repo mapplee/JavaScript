@@ -24,7 +24,7 @@ function pushToApi(input){
 	search=search.replace(' ','+');
 	console.log(search);
 
-	var url="http://api.giphy.com/v1/gifs/search?api_key=VuMSAatfDGEFi1NpnLRMgCCSgoqBIabg&q="+search;
+	var url="https://api.giphy.com/v1/gifs/search?api_key=VuMSAatfDGEFi1NpnLRMgCCSgoqBIabg&q="+search;
 	console.log(url);
 	var ajaxCall=new XMLHttpRequest();
 	ajaxCall.open('GET',url);
@@ -53,8 +53,16 @@ function show(data){
 	sh.innerHTML=' ';
 	link.forEach(function(img){
 	var nlink=img.images.fixed_height.url;
+	var n2=img.embed_url;
+	console.log(n2);
+	var item='<a href="'+nlink+'">'+'<img src="'+nlink+'class="container-image">'+'</a>';
 	
-	sh.innerHTML+='<img src="'+nlink+'class="container-image">';
+	sh.innerHTML+=item;
+	/*
+	copyText.select();
+  	copyText.setSelectionRange(0, 99999)
+  	document.execCommand("copy");
+  	alert("Copied the text: " + copyText.value);*/
 	});
 }
 
