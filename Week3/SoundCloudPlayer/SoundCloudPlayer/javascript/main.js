@@ -7,7 +7,7 @@ SoundCloud.SerachQuery=function(input){
   //client_id : 'v0C9kDEyULvWF0Ggb1vMnimjMDxtYX4B'
 });
 
-SC.get('/tracks', {
+SC.get('/tracks',{
   q: input
 }).then(function(tracks) {
 	SoundCloud.CreateDiv(tracks);
@@ -61,6 +61,7 @@ SoundCloud.CreateDiv=function(tracks)
 			button.addEventListener('click',function(){
 				SoundCloud.GetEmebed(track.permalink_url);
 
+
 			});
 
 	});		
@@ -72,7 +73,14 @@ SC.oEmbed(track_link, {
 }).then(function(embed){
   console.log('oEmbed response: ', embed);
   var sidebar=document.querySelector('.js-playlist');
-  sidebar.innerHTML=embed.html;
+  var box=document.createElement('div');
+  box.innerHTML=embed.html;
+  sidebar.insertBefore(box,sidebar.firstChild);
+  localStorage.setItem("key",sidebar.innerHTML);
+  alert(sidebar.innerHTML);
+
 });
 }
 
+var sidebar=document.querySelector(".js-playlist");
+sidebar.innerHTML=localStorage.getItem("key");
