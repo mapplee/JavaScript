@@ -1,21 +1,54 @@
+
+var UserInput={};
+UserInput.withclick=function()
+{
+	document.querySelector(".btn_1").addEventListener('click',function(){
+			var  inputValue=document.querySelector(".input-search").value;
+			console.log(inputValue);
+			var check=1;
+			SoundCloud.SerachQuery(inputValue,check);
+	});
+}
+UserInput.withclick();
+
 var SoundCloud={};
 
-
-SoundCloud.SerachQuery=function(input){
+SoundCloud.SerachQuery=function(input,check){
 	SC.initialize({
-  client_id: 'cd9be64eeb32d1741c17cb39e41d254d'
-  //client_id : 'v0C9kDEyULvWF0Ggb1vMnimjMDxtYX4B'
-});
+  //client_id: 'cd9be64eeb32d1741c17cb39e41d254d'
+  client_id : '21832d295e3463208d2ed0371ae08791'
 
+});
+var btnPlaylist=document.querySelector('.btn_1');
+var btnTracks=document.querySelector('.btn_2');
+
+if (check===1){
+SC.get('/playlists',{
+  q: input
+}).then(function(tracks) {
+		  	var searchResult = document.querySelector('.js-search-results');
+			searchResult.innerHTML = "";
+			SoundCloud.CreateDiv(tracks);
+
+
+  //console.log(tracks);
+
+});
+}
+
+else{
 SC.get('/tracks',{
   q: input
 }).then(function(tracks) {
-	SoundCloud.CreateDiv(tracks);
+		  		var searchResult = document.querySelector('.js-search-results');
+			searchResult.innerHTML = "";
+			SoundCloud.CreateDiv(tracks);
   //console.log(tracks);
 });
-
 }
-SoundCloud.SerachQuery("jontrona");
+
+}//search query end
+
 
 SoundCloud.CreateDiv=function(tracks)
 {
@@ -63,8 +96,9 @@ SoundCloud.CreateDiv=function(tracks)
 
 
 			});
+			
+	});	
 
-	});		
 
 }
 SoundCloud.GetEmebed=function(track_link){
