@@ -9,7 +9,17 @@ UserInput.withclick=function()
 			SoundCloud.SerachQuery(inputValue,check);
 	});
 }
+UserInput.withclick_Track=function()
+{
+	document.querySelector(".btn_2").addEventListener('click',function(){
+			var  inputValue=document.querySelector(".input-search").value;
+			console.log(inputValue);
+			var check=2;
+			SoundCloud.SerachQuery(inputValue,check);
+	});
+}
 UserInput.withclick();
+UserInput.withclick_Track();
 
 var SoundCloud={};
 
