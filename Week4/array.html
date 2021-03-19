@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0;'>
+	<title>Array</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	//Push item into sports
+	var sports = ['soccer', 'baseball']
+	var total = sports.push('football', 'swimming')
+
+	console.log(sports)  // ['soccer', 'baseball', 'football', 'swimming']
+	console.log(total)   // 4
+
+
+
+	//pop item delet the last element from array
+	var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+	var popped = myFish.pop();
+
+	console.log(myFish); // ['angel', 'clown', 'mandarin' ]
+
+	console.log(popped); // 'sturgeon'
+
+
+	// Shift item Delet the first elements from array 
+	var myFish = ['angel', 'clown', 'mandarin', 'surgeon'];
+
+	console.log('myFish before:', myFish);
+	// myFish before: ['angel', 'clown', 'mandarin', 'surgeon']
+
+	var shifted = myFish.shift();
+
+	console.log('myFish after:', myFish);
+	// myFish after: ['clown', 'mandarin', 'surgeon']
+
+	console.log('Removed this element:', shifted);
+	// Removed this element: angel
+
+
+	///Reverse element of an array
+	var arr=['one','two','three'];
+	arr.reverse(arr);
+	console.log(arr);
+
+
+
+
+
+</script>
+</body>
+</html>
