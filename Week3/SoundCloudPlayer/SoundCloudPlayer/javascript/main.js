@@ -24,7 +24,8 @@ UserInput.withEnterKey=function()
 		var inputValue=document.querySelector(".input-search").value;
 		if(e.which===13)
 		{
-			var check=prompt("Enter 1 for playlists or any key for Treck");
+			//var check=prompt("Enter 1 for playlists or any key for Treck");
+			var check=1;
 			SoundCloud.SerachQuery(inputValue,check);
 		}
 
@@ -136,7 +137,7 @@ SC.oEmbed(track_link, {
   box.innerHTML=embed.html;
   sidebar.insertBefore(box,sidebar.firstChild);
   localStorage.setItem("key",sidebar.innerHTML);
-  alert(sidebar.innerHTML);
+  alert("Item Added");
 
 });
 }
@@ -162,12 +163,15 @@ btnList.addEventListener('click',function(){
 
 	var BtnReset=document.querySelector('.btn_4');
 	BtnReset.addEventListener('click',function(){
+	if(confirm("Are you sure !!!")){
 	var sidebar=document.querySelector(".js-playlist");
 	localStorage.clear();
 	sidebar.innerHTML="";
 	var searchResult=document.querySelector(".js-search-results");
 	searchResult.innerHTML="";
+}
 
 });
+
 
 });
