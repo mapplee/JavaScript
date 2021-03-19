@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0;'>
+	<title>Map</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var city=['Dhaka','Rajshahi','Khulna'];
+	console.log(city);
+	var person=[{name:'Apple',location:'Dhaka'},{name:'Santo',location:'Rajshahi'}];
+	//console.log(person);
+	person.forEach(function(people){
+		//console.log(people.name);
+	});
+	//map making new data array work like foreach for accesing elements.
+	var names=person.map(function(people){
+		return people.name;
+	});
+	console.log(names);
+</script>
+</body>
+</html>
