@@ -26,6 +26,19 @@ html, body {
 	min-width: 200px;
 	z-index: 1;
 }
+#soundcloud-player .col-left2 {
+	width: 10%;
+	height: 100%;
+	background-color: #292929;
+	overflow: auto;
+
+	position: fixed;
+	left: 20%;
+	top: 0;
+	min-width: 200px;
+	z-index: 1;
+}
+
 
 #soundcloud-player .col-right {
 	width: 100%;
@@ -47,11 +60,11 @@ html, body {
 }
 
 #soundcloud-player .input {
-	width: 100%;
+	width: 80%;
 }
 
 #soundcloud-player .input-search {
-	width: 70%;
+	width: 80%;
 	display: block;
 }
 
