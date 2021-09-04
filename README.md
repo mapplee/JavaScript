@@ -11,4 +11,5 @@
    * Use Local storage
 6. Data Visualization Exercise using the Google API 
    * use the Google Spreadsheet API as database and make visual presentation.
+   * Introduced with tabletop.js
  
