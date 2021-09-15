@@ -1,7 +1,8 @@
 # **JavaScript Basic**<br>
 ## What i have learned .
-1. Type of Varible.
-2. Document Object Model
+0.Fundamentals of JavaScript.
+1. JavaScript Runtime .
+2. Document Object Model .
 3. Basic API 
 ## Projects
 1. Animated GIFs search with Giphy API [Preview link](https://mapplee.github.io/JS_search_engine/)
