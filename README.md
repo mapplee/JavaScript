@@ -1,6 +1,6 @@
 # **JavaScript Basic**<br>
 ## What i have learned .
-0.Fundamentals of JavaScript.
+0. Fundamentals of JavaScript.
 1. JavaScript Runtime .
 2. Document Object Model .
 3. Basic API 
